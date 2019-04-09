@@ -5,8 +5,7 @@ import Display from './Display';
 class Dashboard extends Component {
 	state = {
 		balls: 0,
-		strikes: 0,
-		hits: 0
+		strikes: 0
 	};
 
 	render() {
@@ -18,7 +17,7 @@ class Dashboard extends Component {
 					Strike
 				</button>
 				<button onClick={this.handleFoul}>Foul</button>
-				<button>Hit</button>
+				<button onClick={this.handleHit}>Hit</button>
 			</div>
 		);
 	}
@@ -58,6 +57,13 @@ class Dashboard extends Component {
 		this.setState({
 			...this.state,
 			strikes: this.state.strikes + 1
+		});
+	};
+
+	handleHit = e => {
+		this.setState({
+			balls: 0,
+			strikes: 0
 		});
 	};
 }
