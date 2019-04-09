@@ -6,7 +6,6 @@ class Dashboard extends Component {
 	state = {
 		balls: 0,
 		strikes: 0,
-		fouls: 0,
 		hits: 0
 	};
 
@@ -18,7 +17,7 @@ class Dashboard extends Component {
 				<button onClick={this.handleStrike}>
 					Strike
 				</button>
-				<button>Foul</button>
+				<button onClick={this.handleFoul}>Foul</button>
 				<button>Hit</button>
 			</div>
 		);
@@ -29,7 +28,6 @@ class Dashboard extends Component {
 			return this.setState({
 				balls: 0,
 				strikes: 0,
-				fouls: 0,
 				hits: 0
 			});
 
@@ -47,6 +45,15 @@ class Dashboard extends Component {
 				fouls: 0,
 				hits: 0
 			});
+
+		this.setState({
+			...this.state,
+			strikes: this.state.strikes + 1
+		});
+	};
+
+	handleFoul = e => {
+		if (this.state.strikes === 2) return;
 
 		this.setState({
 			...this.state,
