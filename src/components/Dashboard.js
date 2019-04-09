@@ -11,8 +11,8 @@ class Dashboard extends Component {
 	render() {
 		return (
 			<div>
-				<Display {...this.state} />
 				<button onClick={this.handleBall}>Ball</button>
+				<Display {...this.state} />
 				<button onClick={this.handleStrike}>
 					Strike
 				</button>
