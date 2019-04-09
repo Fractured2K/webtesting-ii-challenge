@@ -1,5 +1,7 @@
 import React, { Component } from 'react';
 
+import Display from './Display';
+
 class Dashboard extends Component {
 	state = {
 		balls: 0,
@@ -10,7 +12,7 @@ class Dashboard extends Component {
 	render() {
 		return (
 			<div>
-				<h1>Dashboard</h1>
+				<Display {...this.state} />
 			</div>
 		);
 	}
